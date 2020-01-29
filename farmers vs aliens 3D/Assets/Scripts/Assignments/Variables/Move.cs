@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+
+    public float speed;
+    public float verticalInput;
+    public float horizontalInput;
+    public float turnSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +19,17 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0.4f, 0, 0);
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * verticalInput);
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
+        // x, y, z
+
     }
 
     //Detect collision with another object
-    void OnCollisionEnter(Collision other){
+    /*void OnCollisionEnter(Collision other){
        // Debug.Log("Colliding with an object");
 
         if (other.gameObject.CompareTag("Floor")) //Primary
@@ -41,5 +53,5 @@ public class Move : MonoBehaviour
         Debug.Log("Triggered!");
         
     }
-
+    */
 }
