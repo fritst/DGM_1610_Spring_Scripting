@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
 
-        //int enemyIndex = Random.Range(0, enemyPreFabs.Length);
+        int enemyIndex = Random.Range(0, enemyPreFabs.Length);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
