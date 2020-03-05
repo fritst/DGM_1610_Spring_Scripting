@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        currentHealth -= amount;
         if (currentHealth <= 0)
         {
             //keep score at zero
