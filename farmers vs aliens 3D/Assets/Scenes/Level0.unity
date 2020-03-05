@@ -252,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74554607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 43.06}
+  m_LocalPosition: {x: 0, y: 6.4, z: 43.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   verticalInput: 0
   horizontalInput: 0
   turnSpeed: 150
-  jumpHeight: 5
+  jumpHeight: 555
   isGrounded: 0
   projectilePrefab: {fileID: 7455807524819422528, guid: 45fef3c465a13b146afdf6161c0df387,
     type: 3}
