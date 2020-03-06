@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth -= maxHealth;
+        currentHealth = maxHealth;
         spawnPoint = GameObject.Find("SpawnPoint").transform;
 
 
@@ -32,12 +32,13 @@ public class EnemyHealth : MonoBehaviour
             currentHealth = 0;
             print("Enemy is Dead!");
             // add points to your score for killing wolf
-            //scoremanager.AddPoints(points);
+            ScoreManager.AddPoints(points);
             //Move wolf to spawn point for restart
-            transform.position = spawnPoint.position;
-            transform.rotation = spawnPoint.rotation;
+            Destroy(gameObject);
+            //transform.position = spawnPoint.position;
+            //transform.rotation = spawnPoint.rotation;
             //reset Wolf Health
-            currentHealth = maxHealth;
+            //currentHealth = maxHealth;
 
 
         }

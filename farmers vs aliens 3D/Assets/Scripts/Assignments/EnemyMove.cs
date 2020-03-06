@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     public GameObject player;
     //public Transform target; // transform.Translate example
-    private Rigidbody enemyRb; // Velocity and Add Force examples
+    public Rigidbody enemyRb; // Velocity and Add Force examples
     public float moveSpeed;
 
     // Start is called before the first frame update
@@ -22,8 +22,8 @@ public class EnemyMove : MonoBehaviour
     {
 
         // Transform.Translate            
-        //transform.LookAt(target);
-        //transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        // transform.LookAt(target);
+        // transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
 
     }
