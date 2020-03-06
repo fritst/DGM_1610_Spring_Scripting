@@ -24,7 +24,7 @@ public class EnemyKill : MonoBehaviour
             var life = other.gameObject;
             var lives = life.GetComponent<PlayerLives>();
 
-            if (lives > 0 && health = null)
+            if (lives != null)
             {
                 lives.Lose(playerLoseLife);
                 Debug.Log("You died!");

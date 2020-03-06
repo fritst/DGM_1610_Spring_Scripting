@@ -17,10 +17,12 @@ public class Move : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -44,6 +46,8 @@ public class Move : MonoBehaviour
 
         }
     }
+
+
 
     private void FixedUpdate()
     {

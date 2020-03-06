@@ -28,7 +28,7 @@ public class PlayerLives : MonoBehaviour
         {
             playerCurrentLives = 0;
             print("YOU LOSE!");
-            Destroy(gameObject); //hopefully figure out how to actually lose
+            //Destroy(gameObject); //hopefully figure out how to actually lose
         }
     }
 }
