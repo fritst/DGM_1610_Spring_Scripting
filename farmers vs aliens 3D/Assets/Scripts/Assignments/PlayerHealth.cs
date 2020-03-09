@@ -11,6 +11,11 @@ public class PlayerHealth : MonoBehaviour
 
     public Transform playerSpawnPoint;
 
+ 
+    
+
+    
+        
 
     //public int playerCurrentLives;
 
@@ -23,8 +28,8 @@ public class PlayerHealth : MonoBehaviour
         playerCurrentHealth = playerMaxHealth;
         playerSpawnPoint = GameObject.Find("PlayerSpawnPoint").transform;
         player = GameObject.Find("Player").transform;
-        
 
+        
     }
 
     // Update is called once per frame
