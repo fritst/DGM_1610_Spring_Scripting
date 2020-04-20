@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3520c4ecdd10ef4bb9265ca25b56d7b, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  soName: Bob
+  description: Middle Aged Cube
+  model: {fileID: 569277409640438742, guid: 0a97c3b6dfb66174e8350bbe363edd6a, type: 3}
+  color: {r: 0.4528302, g: 0.599027, b: 0.6037736, a: 0}
