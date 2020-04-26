@@ -46,7 +46,7 @@ public class Wander2 : MonoBehaviour
         if (distance < alertDist && distance > attackDist)
         {
             print("Enemy sees target");
-            speed += 2;
+            speed += 1;
             transform.LookAt(target);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
