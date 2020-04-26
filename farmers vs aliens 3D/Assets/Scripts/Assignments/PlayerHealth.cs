@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public Transform playerSpawnPoint;
 
- 
+    public Text HP;
+    public Text MaxHP;
     
 
     
@@ -35,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HP.text = playerCurrentHealth.ToString();
+        MaxHP.text = playerMaxHealth.ToString();
     }
 
     
