@@ -23,18 +23,29 @@ public class Move : MonoBehaviour
     public Text fullBulletAmmo;
     public int firedBullet = 1;
     public static bool notOutOfAmmo;
+    public int time = 3;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         currentBulletAmmo = maxBulletAmmo;
+        notOutOfAmmo = true;
+        StartCoroutine(reload());
+        rb = GetComponent<Rigidbody>();
+        
     }
+    
 
     // Update is called once per frame
     void Update()
     {
+        /*if (currentBulletAmmo >= 0)
+        {
+            notOutOfAmmo = true;
+            
+        }*/
+
         remainingBulletAmmo.text = currentBulletAmmo.ToString();
         fullBulletAmmo.text = maxBulletAmmo.ToString();
 
@@ -57,19 +68,26 @@ public class Move : MonoBehaviour
             Move.UseAmmo(firedBullet);
             Debug.Log("You fired the bullet!");
         }
+
     }
 
     public static void UseAmmo(int firedBullet)
     {
+        
         currentBulletAmmo -= firedBullet;
         if (currentBulletAmmo <= 0)
         {
+            
             //keep score at zero
             currentBulletAmmo = 0;
             notOutOfAmmo = false;
-            print("Out of ammo!");
             
-            currentBulletAmmo = 10;
+            print("Out of ammo!");
+           
+
+
+
+
         }
         else if (currentBulletAmmo >= 0)
         {
@@ -77,6 +95,14 @@ public class Move : MonoBehaviour
             
         }
     }
+    IEnumerator reload()
+    {
+        if (notOutOfAmmo == false)
+        yield return new WaitForSeconds(time);
+        //currentBulletAmmo = 10;
+
+    }
+
 
 
     private void FixedUpdate()
