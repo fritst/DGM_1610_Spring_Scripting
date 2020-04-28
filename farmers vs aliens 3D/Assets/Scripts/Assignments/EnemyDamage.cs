@@ -20,12 +20,12 @@ public class EnemyDamage : MonoBehaviour
         {
             var hit = other.gameObject;
             
-            var health = hit.GetComponent<PlayerHealth>();
+            var playerCurrentHealth = hit.GetComponent<PlayerHealth>();
             
 
-            if (health != null)
+            if (playerCurrentHealth != null)
             {
-                health.TakeDamage(enemyDamage);
+                playerCurrentHealth.TakeDamage(enemyDamage);
                 Debug.Log("Ouch, you've been hit!");
 
             }

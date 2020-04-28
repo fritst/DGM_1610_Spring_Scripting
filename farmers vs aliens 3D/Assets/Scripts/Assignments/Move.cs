@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Move : MonoBehaviour
 {
@@ -16,18 +17,27 @@ public class Move : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject projectilePrefab;
+    public static int currentBulletAmmo;
+    public int maxBulletAmmo = 10;
+    public Text remainingBulletAmmo;
+    public Text fullBulletAmmo;
+    public int firedBullet = 1;
+    public static bool notOutOfAmmo;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        currentBulletAmmo = maxBulletAmmo;
     }
 
     // Update is called once per frame
     void Update()
     {
+        remainingBulletAmmo.text = currentBulletAmmo.ToString();
+        fullBulletAmmo.text = maxBulletAmmo.ToString();
+
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
@@ -40,13 +50,33 @@ public class Move : MonoBehaviour
             rb.AddForce(Vector3.up * jumpHeight * 1000 * Time.deltaTime);
         }*/
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && notOutOfAmmo)
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
 
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Move.UseAmmo(firedBullet);
+            Debug.Log("You fired the bullet!");
         }
     }
 
+    public static void UseAmmo(int firedBullet)
+    {
+        currentBulletAmmo -= firedBullet;
+        if (currentBulletAmmo <= 0)
+        {
+            //keep score at zero
+            currentBulletAmmo = 0;
+            notOutOfAmmo = false;
+            print("Out of ammo!");
+            
+            currentBulletAmmo = 10;
+        }
+        else if (currentBulletAmmo >= 0)
+        {
+            notOutOfAmmo = true;
+            
+        }
+    }
 
 
     private void FixedUpdate()

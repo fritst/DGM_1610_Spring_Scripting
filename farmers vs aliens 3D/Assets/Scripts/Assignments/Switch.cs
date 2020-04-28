@@ -30,7 +30,7 @@ public class Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*switch(favHero){
+        switch(favHero){
             case "Superman":
             print("Wrong!");
             break;
@@ -38,8 +38,8 @@ public class Switch : MonoBehaviour
             print("Correct!");
             break;
              
-        } */
-
+        } 
+        /*
         switch (smarts)
         {
             case 1:
@@ -52,5 +52,6 @@ public class Switch : MonoBehaviour
                 print("Derp!");
                 break;
         }
+        */
     }
 }

@@ -7,8 +7,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public Transform player;
 
-    public int playerCurrentHealth;
+    public static int playerCurrentHealth;
     public int playerMaxHealth = 10;
+    public int playerHealthAmount = 2;
 
     public Transform playerSpawnPoint;
 
@@ -41,7 +42,11 @@ public class PlayerHealth : MonoBehaviour
         MaxHP.text = playerMaxHealth.ToString();
     }
 
-    
+    public static void GiveHealth(int playerHealAmount)
+    {
+        playerCurrentHealth += playerHealAmount;
+
+    } 
 
     public void TakeDamage(int playerHealthAmount)
     {
@@ -66,6 +71,6 @@ public class PlayerHealth : MonoBehaviour
     }
 
     
-
     
+
 }
